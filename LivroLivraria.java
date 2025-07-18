@@ -30,11 +30,26 @@ public class LivroLivraria extends Livro { // criar uma subclasse de livro
         categoria = nomeCategoria;
     }
 
-
     // metodos
 
     public void Vender(){
         System.out.println("Estou vendendo...");
+    }
+    
+    // metodo override - está subscrevendo um metodo da classe pai 
+    @Override
+    public void Localizar(){
+        System.out.println("Estou localizando um livro da livraria...");
+    }
+
+    @Override
+    public void Ler(){
+        System.out.println("Estou lendo o livro da livraria...");
+    }
+
+    @Override
+    public void Cadastrar(){
+        System.out.println("Estou cadastrando o livro da livraria...");
     }
 
 

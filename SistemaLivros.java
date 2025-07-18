@@ -30,8 +30,6 @@ public class SistemaLivros {
         livroBiblioteca.Ler();
         livroBiblioteca.Cadastrar();
         livroBiblioteca.Localizar();
-        livroBiblioteca.Alugar();
-        livroBiblioteca.Devolver();
 
         //LivroLivraria
 
@@ -48,7 +46,11 @@ public class SistemaLivros {
         livroLivraria.setLocalPrateleira("Prateleira AB9");
         livroLivraria.setCategoria("Romance");
 
-        livroLivraria.Vender();
+        //usar metodo sobrescrito com override
+        livroLivraria.Ler();
+        livroLivraria.Cadastrar();
+        livroLivraria.Localizar();
+
 
         String mensagemLivro = "\nCódigo: "+livro.getCodigo()+
                                "\nTitulo: "+livro.getTitulo()+
@@ -56,8 +58,8 @@ public class SistemaLivros {
                                "\nEditora: "+livro.getEditora()+
                                "\nnrPaginas: "+livro.getNrPaginas()+
                                "\nEdição: " +livro.getEdicao();
-                               
-        System.out.println("Livro: "+mensagemLivro);
+
+        /*System.out.println("Livro: "+mensagemLivro);*/
 
         String mensagemLivroBiblioteca = 
                                "\nCódigo: "+livroBiblioteca.getCodigo()+
@@ -71,7 +73,7 @@ public class SistemaLivros {
                                "\nPrazo entrega: "+livroBiblioteca.getPrazoEntrega()+
                                "\nNome de quem emprestou: "+livroBiblioteca.getNomeQuemEmprestou();
 
-        System.out.println("Livro biblioteca: "+mensagemLivroBiblioteca);
+        /*System.out.println("Livro biblioteca: "+mensagemLivroBiblioteca);*/
 
 
         String mensagemLivroLivraria = 
@@ -86,9 +88,22 @@ public class SistemaLivros {
                                "\nPreço: "+livroLivraria.getPreco()+
                                "\nNovo ou usado: "+livroLivraria.getNovoUsado();
 
-        System.out.println("Livro Livraria: "+mensagemLivroLivraria);
+        /*System.out.println("Livro Livraria: "+mensagemLivroLivraria);*/
 
+        //exemplo metodo construtor
+        Livro  novoLivro = new Livro();
+        System.out.println("Novo livro "+novoLivro.getTitulo());
+        novoLivro.setTitulo("Novo titulo");
+        System.out.println("Novo livro "+novoLivro.getTitulo());
 
+        // metodo construtor com parametros
+        Livro livro2 = new Livro(99, "Titanic");
+        System.out.println("Livro 2: "+livro2.getTitulo());
 
+        Livro livro3 = new Livro(100, "O morto", "Edward", "123", 200, 3);
+        System.out.println("Livro 3: "+livro3.getAutor());
+
+        LivroBiblioteca livroBiblioteca2 = new LivroBiblioteca(100, "Crepusculo", "vampiros", "SA", 200, 3, "AB2", "Romance", 5, "Gabi");
+        System.out.println("Livro Biblioteca 2: "+livroBiblioteca2.getNomeQuemEmprestou());
     }
 } 
